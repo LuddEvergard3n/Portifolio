@@ -1,17 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    // Boot screen
     setTimeout(() => {
-        document.getElementById("boot-screen").style.display = "none";
-    }, 1500);
+        document.getElementById("boot-screen")?.remove();
+    }, 1200);
 
-    document.querySelectorAll("nav li").forEach(item => {
-        item.addEventListener("click", () => {
-            const section = item.getAttribute("data-section");
+    // Navegação entre abas
+    window.showSection = function (id) {
+        document.querySelectorAll(".section").forEach(sec =>
+            sec.classList.add("hidden")
+        );
+        document.getElementById(id)?.classList.remove("hidden");
+    };
 
-            document.querySelectorAll("section").forEach(sec =>
-                sec.classList.add("hidden")
-            );
+    // Controle de idioma (XP-style, estável)
+    window.setLang = function (lang) {
+        document.querySelectorAll(".lang").forEach(el =>
+            el.classList.add("hidden")
+        );
+        document.querySelectorAll("." + lang).forEach(el =>
+            el.classList.remove("hidden")
+        );
+        localStorage.setItem("lang", lang);
+    };
 
-            document.getElementById(section).classList.remove("hidden");
-        });
-    });
+    // Idioma padrão
+    const savedLang = localStorage.getItem("lang") || "pt";
+    setLang(savedLang);
 });

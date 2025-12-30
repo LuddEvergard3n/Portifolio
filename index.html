@@ -2,120 +2,171 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ludd – Portfólio</title>
+    <title>Ludd Portfolio - Internet Explorer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="boot-screen">
-        <pre>
-BOOTING PORTFOLIO v1.0
-LOADING MODULES...
-COMPILING EXPERIENCE...
-DONE.
-        </pre>
+
+<div class="window">
+    <div class="title-bar">
+        <span>My Portfolio — Internet Explorer</span>
+        <div class="lang-switch">
+            <button onclick="setLang('pt')">PT</button>
+            <button onclick="setLang('en')">EN</button>
+        </div>
     </div>
 
-    <header>
-        <h1 class="title">Herbert B. R. R. Sorg Ludka</h1>
-        <p class="subtitle">Professor de Inglês • Historiador • Talent Acquisition • Administrativo</p>
-        <nav>
-            <ul>
-                <li data-section="sobre">Sobre</li>
-                <li data-section="experiencia">Experiência</li>
-                <li data-section="skills">Skills</li>
-                <li data-section="cursos">Cursos</li>
-                <li data-section="contato">Contato</li>
-            </ul>
-        </nav>
-    </header>
+    <div class="menu-bar">
+        <button onclick="showSection('about')">About</button>
+        <button onclick="showSection('projects')">Projects</button>
+        <button onclick="showSection('contact')">Contact</button>
+    </div>
 
-    <section class="section" id="sobre">
-        <h2>// Sobre Mim</h2>
-        <p>
-            Professor de Inglês e História. Agente Administrativo e Talent Acquisition. Estudante de História na UNIVALI.
-            Possuo cursos em diversas áreas e mantenho uma abordagem pragmática, analítica e tradicionalista.
-        </p>
-    </section>
+    <div class="content">
 
-    <section class="section" id="experiencia">
-        <h2>// Experiência</h2>
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <h2>Sobre mim</h2>
 
-        <div class="card">
-            <h3>Professor de Inglês — Wizard</h3>
-            <p>Atuação em ensino de inglês, condução de aulas, organização de eventos e feedback pedagógico individualizado.</p>
-        </div>
+            <p class="lang pt">
+Sou focado em soluções práticas, estáveis e eficientes.
+Professor de Inglês, Professor de História e Prompt Engineer.
+Tenho interesse especial em sistemas simples, arquitetura durável,
+simulação, produtividade intelectual e ferramentas que resistem ao tempo.
+            </p>
 
-        <div class="card">
-            <h3>Professor de Inglês — Particular</h3>
-            <p>Desenvolvimento de material didático próprio e acompanhamento longitudinal de alunos.</p>
-        </div>
+            <p class="lang pt">
+Minha abordagem valoriza software funcional, previsível e legível —
+inspirada na web clássica, em sistemas legados bem projetados
+e em aplicações que resolvem problemas reais sem excesso de abstração.
+            </p>
 
-        <div class="card">
-            <h3>Professor de História — Particular</h3>
-            <p>Ensino focado em concursos e vestibulares, análise de fontes históricas e criação de materiais.</p>
-        </div>
+            <p class="lang pt">
+Formação e áreas relevantes:
+<ul class="lang pt">
+    <li>Licenciatura em História (em andamento)</li>
+    <li>Professor de Inglês (docência e uso técnico)</li>
+    <li>Técnico em Segurança do Trabalho</li>
+    <li>Uso avançado de IA e LLMs como ferramenta técnica</li>
+    <li>Desenvolvimento Web clássico (HTML, CSS, JavaScript)</li>
+</ul>
+            </p>
 
-        <div class="card">
-            <h3>Talent Acquisition - YFE Brasilien</h3>
-            <p>Recrutamento e seleção de profissionais nas áreas da saúde e educação.</p>
-        </div>
+            <p class="lang en hidden">
+I am focused on practical, stable and efficient solutions.
+English Teacher, History Teacher and Prompt Engineer.
+I have a strong interest in simple systems, durable architecture,
+simulation, intellectual productivity and long-lasting tools.
+            </p>
 
-    </section>
+            <p class="lang en hidden">
+My approach values functional, predictable and readable software —
+inspired by the classic web, well-designed legacy systems
+and applications that solve real problems without unnecessary abstraction.
+            </p>
 
-    <section class="section" id="skills">
-        <h2>// Skills Principais</h2>
-        <ul class="skills-list">
-            <li>Inglês Fluente</li>
-            <li>Comunicação</li>
-            <li>Análise Crítica e Escrita Acadêmica</li>
-            <li>Didática e Pedagogia</li>
-            <li>Ética</li>
-            <li>Informática e Tecnologia</li>
-        </ul>
-    </section>
+            <p class="lang en hidden">
+Background and relevant areas:
+<ul class="lang en hidden">
+    <li>History degree (in progress)</li>
+    <li>English Teacher (teaching and technical usage)</li>
+    <li>Occupational Safety Technician</li>
+    <li>Advanced use of AI and LLMs as technical tools</li>
+    <li>Classic Web Development (HTML, CSS, JavaScript)</li>
+</ul>
+            </p>
+        </section>
 
-    <section class="section" id="cursos">
-        <h2>// Cursos</h2>
+        <!-- PROJECTS -->
+        <section id="projects" class="section hidden">
+            <h2>Projetos</h2>
 
-        <div class="course-item">
-            <h3>Licenciatura em História — UNIVALI</h3>
-            <p>Formação acadêmica voltada à pesquisa histórica e ao ensino.</p>
-        </div>
+            <div class="project">
+                <h3>Computabilis</h3>
+                <p class="lang pt">
+Ferramenta simples de gestão financeira, com gráfico de pizza em tempo real,
+ideal para organizar receitas e despesas de forma clara, visual e objetiva.
+                </p>
+                <p class="lang en hidden">
+A simple financial management tool with a real-time pie chart,
+designed to organize income and expenses clearly and objectively.
+                </p>
+            </div>
 
-        <div class="course-item">
-            <h3>Curso Básico de Técnico em Segurança do Trabalho</h3>
-            <p>Formado, com treinamento operacional básico.</p>
-        </div>
+            <div class="project">
+                <h3>Studium</h3>
+                <p class="lang pt">
+Ferramenta de estudos focada em organização, método clássico,
+planejamento de longo prazo e disciplina acadêmica.
+                </p>
+                <p class="lang en hidden">
+A study tool focused on organization, classical methods,
+long-term planning and academic discipline.
+                </p>
+            </div>
 
-        <div class="course-item">
-            <h3>Metodologia do Ensino da Língua Inglesa</h3>
-            <p>Domínio completo da língua, com experiência docente.</p>
-        </div>
+            <div class="project">
+                <h3>ATLAS</h3>
+                <p class="lang pt">
+Plataforma experimental de simulação e análise estratégica.
+Voltada para modelagem econômica, planejamento e visualização de cenários.
+Atualmente em fase final de depuração.
+                </p>
+                <p class="lang en hidden">
+An experimental simulation and strategic analysis platform.
+Focused on economic modeling, planning and scenario visualization.
+Currently in final debugging stage.
+                </p>
+            </div>
 
-        <div class="course-item">
-            <h3>Ensino de História</h3>
-            <p>Domínio completo do ensino de História, com experiência docente e acadêmica.</p>
-        </div>
+            <div class="project">
+                <h3>Fastlog Analyzer</h3>
+                <p class="lang pt">
+Ferramenta de análise e organização de dados operacionais,
+com foco em leitura rápida, clareza e apoio à tomada de decisão.
+                </p>
+                <p class="lang en hidden">
+An operational data analysis tool focused on fast reading,
+clarity and decision-making support.
+                </p>
+            </div>
+        </section>
 
-        <div class="course-item">
-            <h3>Cursos de Tecnologia</h3>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS</li>
-                <li>Informática Básica</li>
-                <li>Uso e Ensino de IA</li>
-            </ul>
-        </div>
+        <!-- CONTACT -->
+        <section id="contact" class="section hidden">
+            <h2>Contato</h2>
 
-    </section>
+            <p class="lang pt">
+Email: <strong>hbrslud@gmail.com</strong><br>
+GitHub: <strong><a href="https://github.com/LuddEvergard3n" target="_blank">github.com/LuddEvergard3n</a></strong><br>
+LinkedIn: <strong><a href="https://www.linkedin.com/in/herbertbr-sorg-ludka/" target="_blank">linkedin.com/in/herbertbr-sorg-ludka</a></strong>
+            </p>
 
-    <section class="section" id="contato">
-        <h2>// Contato</h2>
-        <p>Email: <strong>hbrslud@gmail.com</strong></p>
-        <p>GitHub: <strong>github.com/LuddEvergard3n</strong></p>
-    </section>
+            <p class="lang en hidden">
+Email: <strong>hbrslud@gmail.com</strong><br>
+GitHub: <strong><a href="https://github.com/LuddEvergard3n" target="_blank">github.com/LuddEvergard3n</a></strong><br>
+LinkedIn: <strong><a href="https://www.linkedin.com/in/herbertbr-sorg-ludka/" target="_blank">linkedin.com/in/herbertbr-sorg-ludka</a></strong>
+            </p>
+        </section>
 
-    <script src="script.js"></script>
+    </div>
+</div>
+
+<script>
+function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+}
+
+function setLang(lang) {
+    document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll('.' + lang).forEach(el => el.classList.remove('hidden'));
+    localStorage.setItem('lang', lang);
+}
+
+const savedLang = localStorage.getItem('lang') || 'pt';
+setLang(savedLang);
+</script>
+
 </body>
 </html>
