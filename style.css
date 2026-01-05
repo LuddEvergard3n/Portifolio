@@ -1,65 +1,706 @@
-body {
-    background: #008080;
-    font-family: Tahoma, Verdana, Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-}
+/* Windows XP Portfolio - Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-.window {
-    width: 720px;
-    margin: auto;
-    border: 2px solid #000;
-    background: #c0c0c0;
-}
-
-.title-bar {
-    background: linear-gradient(to right, #000080, #1084d0);
-    color: white;
-    padding: 6px;
-    font-weight: bold;
+/* ==================== BOOT SCREEN ==================== */
+.boot-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.lang-switch button {
-    background: #c0c0c0;
-    border: 1px solid #000;
-    font-size: 12px;
+.boot-screen.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+.boot-screen.hidden {
+    display: none !important;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+
+.boot-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.boot-windows-logo {
+    width: 90px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.boot-text {
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+.boot-text .microsoft {
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.boot-text .windows {
+    font-size: 48px;
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: -2px;
+}
+
+.boot-text .windows span {
+    font-size: 24px;
+    font-style: normal;
+    vertical-align: super;
+}
+
+.boot-text .edition {
+    font-size: 16px;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+/* Progress Bar */
+.boot-progress {
+    width: 200px;
+    height: 20px;
+    background: #000;
+    border: 1px solid #333;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.boot-progress-inner {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    bottom: 3px;
+    display: flex;
+    gap: 3px;
+    animation: progressMove 1s linear infinite;
+}
+
+@keyframes progressMove {
+    0% { left: -60px; }
+    100% { left: 200px; }
+}
+
+.progress-block {
+    width: 12px;
+    height: 100%;
+    background: linear-gradient(180deg, #5089d8 0%, #2a5caa 50%, #1e4a8c 100%);
+    border-radius: 1px;
+}
+
+.boot-copyright {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: #808080;
+    font-size: 11px;
+    font-family: Tahoma, sans-serif;
+}
+
+.boot-ms-logo {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    color: #808080;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-style: italic;
+}
+
+/* ==================== DESKTOP ==================== */
+body {
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    font-size: 11px;
+    overflow: hidden;
+    height: 100vh;
+    background: url('img/bliss.jpg') center center / cover no-repeat fixed;
+}
+
+/* ==================== DESKTOP ICONS ==================== */
+.desktop-icons {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
     cursor: pointer;
-}
-
-.menu-bar {
-    background: #e0e0e0;
+    text-decoration: none;
     padding: 5px;
-    border-bottom: 2px solid #808080;
 }
 
-.menu-bar button {
-    background: #c0c0c0;
-    border: 1px solid #000;
-    margin-right: 5px;
-    cursor: pointer;
+.desktop-icon:hover { background: rgba(11, 97, 255, 0.3); }
+
+.desktop-icon .icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 5px;
+    object-fit: contain;
 }
 
-.content {
-    padding: 15px;
-    background: #ffffff;
+.desktop-icon span {
+    color: white;
+    text-shadow: 1px 1px 2px #000;
+    text-align: center;
+    font-size: 11px;
+    word-wrap: break-word;
+}
+
+/* ==================== START MENU ==================== */
+.start-menu {
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    width: 380px;
+    background: #fff;
+    border: 2px solid #0054e3;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+    z-index: 2000;
+    display: none;
+    overflow: hidden;
+}
+
+.start-menu.active {
+    display: block;
+}
+
+.start-menu-header {
+    background: linear-gradient(180deg, #1f5fc9 0%, #3a8cf8 100%);
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #e0e0e0 0%, #a0a0a0 100%);
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.user-name {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.start-menu-body {
+    display: flex;
     min-height: 300px;
 }
 
-.section h2 {
-    border-bottom: 2px solid #000080;
-    padding-bottom: 4px;
+.start-menu-left {
+    flex: 1;
+    background: #fff;
+    padding: 5px 0;
+    border-right: 1px solid #d3d3d3;
 }
 
-.project {
-    border: 1px solid #808080;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: #f0f0f0;
+.start-menu-right {
+    width: 150px;
+    background: linear-gradient(180deg, #6b9dea 0%, #4177d1 100%);
+    padding: 5px 0;
 }
 
-.hidden {
+.start-menu-item {
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.start-menu-left .start-menu-item:hover {
+    background: #316ac5;
+    color: white;
+}
+
+.start-menu-right .start-menu-item {
+    color: white;
+    padding: 5px 10px;
+}
+
+.start-menu-right .start-menu-item:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.start-menu-item img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.start-menu-item.pinned {
+    padding: 8px 10px;
+}
+
+.start-menu-item.pinned div {
+    display: flex;
+    flex-direction: column;
+}
+
+.start-menu-item.pinned span {
+    font-size: 10px;
+    color: #666;
+}
+
+.start-menu-item.pinned:hover span {
+    color: #ccc;
+}
+
+.start-menu-item.all-programs {
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.start-menu-item .arrow {
+    color: #666;
+}
+
+.start-menu-separator {
+    height: 1px;
+    background: #d3d3d3;
+    margin: 5px 10px;
+}
+
+.start-menu-footer {
+    background: linear-gradient(180deg, #3168d5 0%, #4993e6 3%, #2157d7 6%, #1941a5 100%);
+    padding: 5px 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.start-footer-btn {
+    background: linear-gradient(180deg, #4a90d9 0%, #2d6cd9 100%);
+    border: 1px solid #1c4f8c;
+    border-radius: 3px;
+    padding: 5px 15px;
+    color: white;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.start-footer-btn:hover {
+    background: linear-gradient(180deg, #5aa0e9 0%, #3d7ce9 100%);
+}
+
+.start-footer-btn.shutdown {
+    background: linear-gradient(180deg, #d94a4a 0%, #c93333 100%);
+    border-color: #8c1c1c;
+}
+
+.start-footer-btn.shutdown:hover {
+    background: linear-gradient(180deg, #e95a5a 0%, #d94343 100%);
+}
+
+/* ==================== TASKBAR ==================== */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(180deg, #3168d5 0%, #4993e6 3%, #2157d7 6%, #1941a5 90%, #122c73 100%);
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    z-index: 1000;
+}
+
+.start-button {
+    background: linear-gradient(180deg, #3c9c3c 0%, #2d8e2d 50%, #1e7b1e 100%);
+    border: none;
+    border-radius: 0 8px 8px 0;
+    padding: 3px 15px 3px 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    font-style: italic;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.start-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.start-button:hover { filter: brightness(1.1); }
+.start-button:active { filter: brightness(0.9); }
+
+.start-button.active {
+    background: linear-gradient(180deg, #2d8e2d 0%, #1e7b1e 50%, #156815 100%);
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.taskbar-programs {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.taskbar-item {
+    background: linear-gradient(180deg, #3c81f3 0%, #2d6cd9 100%);
+    border: 1px solid #0c3c8c;
+    border-radius: 3px;
+    padding: 3px 12px;
+    color: white;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.taskbar-item img {
+    width: 16px;
+    height: 16px;
+}
+
+.taskbar-item.active {
+    background: linear-gradient(180deg, #1c4fb3 0%, #2d6cd9 100%);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+}
+
+.system-tray {
+    background: linear-gradient(180deg, #0f8cee 0%, #1665c1 100%);
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-left: 1px solid #0c3c8c;
+    height: 100%;
+}
+
+.system-tray .time {
+    color: white;
+    font-size: 11px;
+}
+
+/* ==================== WINDOW ==================== */
+.window {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    width: 850px;
+    max-width: calc(100vw - 120px);
+    max-height: calc(100vh - 100px);
+    background: #ece9d8;
+    border: 3px solid #0055ea;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     display: none;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.window.active { display: block; }
+
+/* ==================== TITLE BAR ==================== */
+.title-bar {
+    background: linear-gradient(180deg, #0058ee 0%, #3a93ff 8%, #288eff 40%, #0058ee 88%, #002c9b 93%, #003bcd 95%, #1070ff 100%);
+    padding: 3px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: move;
+    user-select: none;
+}
+
+.title-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.title-bar-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.title-bar-text {
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.window-btn {
+    width: 21px;
+    height: 21px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-minimize {
+    background: linear-gradient(180deg, #3c81f3 0%, #2d6cd9 100%);
+    color: white;
+}
+
+.btn-maximize {
+    background: linear-gradient(180deg, #3c81f3 0%, #2d6cd9 100%);
+    color: white;
+}
+
+.btn-close {
+    background: linear-gradient(180deg, #c75050 0%, #b33 100%);
+    color: white;
+}
+
+.window-btn:hover { filter: brightness(1.2); }
+
+/* ==================== TOOLBAR ==================== */
+.toolbar {
+    background: linear-gradient(180deg, #f6f8fb 0%, #e3e8f0 100%);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid #aaa;
+    flex-wrap: wrap;
+}
+
+.toolbar-btn {
+    background: linear-gradient(180deg, #fff 0%, #ddd 100%);
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 3px 10px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.toolbar-btn:hover { background: linear-gradient(180deg, #e8f4fc 0%, #c4e0f9 100%); }
+.toolbar-btn:disabled { opacity: 0.5; cursor: default; }
+
+.toolbar-sep {
+    width: 1px;
+    height: 20px;
+    background: #aaa;
+    margin: 0 5px;
+}
+
+.lang-switch {
+    display: flex;
+    gap: 2px;
+}
+
+.lang-switch button {
+    background: #f0f0f0;
+    border: 1px solid #999;
+    padding: 2px 8px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.lang-switch button.active {
+    background: #316ac5;
+    color: white;
+}
+
+/* ==================== ADDRESS BAR ==================== */
+.address-bar {
+    background: #f1efe2;
+    padding: 3px 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid #aaa;
+}
+
+.address-bar > span { font-size: 11px; }
+
+.address-bar input {
+    flex: 1;
+    border: 1px solid #7f9db9;
+    padding: 2px 5px;
+    font-size: 11px;
+    background: white;
+}
+
+.go-btn {
+    background: linear-gradient(180deg, #fff 0%, #ddd 100%);
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 2px 10px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* ==================== NAVIGATION ==================== */
+.nav-bar {
+    background: #f6f4ec;
+    padding: 5px;
+    border-bottom: 1px solid #aaa;
+    display: flex;
+    gap: 5px;
+}
+
+.nav-tab {
+    background: #ece9d8;
+    border: 1px solid #aaa;
+    border-bottom: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.nav-tab:hover { background: #f6f4ec; }
+
+.nav-tab.active {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+}
+
+/* ==================== CONTENT ==================== */
+.content {
+    background: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 250px);
+}
+
+.section { display: block; }
+.section.hidden { display: none; }
+.lang { display: inline; }
+.lang.hidden { display: none !important; }
+
+h2 {
+    color: #003399;
+    border-bottom: 2px solid #003399;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+li { margin: 8px 0; }
+
+/* ==================== PROJECT CARDS ==================== */
+.project {
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.project h3 {
+    color: #003399;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+.project-link {
+    color: #0066cc;
+    text-decoration: underline;
+    font-size: 11px;
+}
+
+.project-link:hover { color: #003399; }
+
+/* ==================== CONTACT ==================== */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+}
+
+.contact-item a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.contact-item a:hover { text-decoration: underline; }
+
+/* ==================== STATUS BAR ==================== */
+.status-bar {
+    background: #ece9d8;
+    padding: 3px 10px;
+    border-top: 1px solid #aaa;
+    font-size: 11px;
+    color: #333;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 900px) {
+    .window {
+        left: 10px;
+        width: calc(100vw - 20px);
+    }
+    
+    .start-menu {
+        width: 100%;
+        border-radius: 0;
+    }
 }

@@ -2,171 +2,341 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Ludd Portfolio - Internet Explorer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludd Portfolio - Windows XP</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="window">
-    <div class="title-bar">
-        <span>My Portfolio — Internet Explorer</span>
-        <div class="lang-switch">
-            <button onclick="setLang('pt')">PT</button>
-            <button onclick="setLang('en')">EN</button>
+<!-- Boot Screen -->
+<div id="boot-screen" class="boot-screen">
+    <div class="boot-logo">
+        <img src="img/windows-logo.png" class="boot-windows-logo" alt="Windows Logo">
+        <div class="boot-text">
+            <div class="microsoft">Microsoft<sup>&reg;</sup></div>
+            <div class="windows">Windows<span>xp</span></div>
+            <div class="edition">Professional</div>
         </div>
     </div>
-
-    <div class="menu-bar">
-        <button onclick="showSection('about')">About</button>
-        <button onclick="showSection('projects')">Projects</button>
-        <button onclick="showSection('contact')">Contact</button>
+    <div class="boot-progress">
+        <div class="boot-progress-inner">
+            <div class="progress-block"></div>
+            <div class="progress-block"></div>
+            <div class="progress-block"></div>
+        </div>
     </div>
+    <div class="boot-copyright">Copyright &copy; Microsoft Corporation</div>
+    <div class="boot-ms-logo">Microsoft</div>
+</div>
 
-    <div class="content">
+<!-- Desktop Icons -->
+<div class="desktop-icons">
+    <a class="desktop-icon" href="#">
+        <img src="img/my-computer.png" class="icon" alt="Meu Computador">
+        <span class="lang pt">Meu Computador</span>
+        <span class="lang en hidden">My Computer</span>
+    </a>
+    <a class="desktop-icon" href="#">
+        <img src="img/folder.png" class="icon" alt="Meus Documentos">
+        <span class="lang pt">Meus Documentos</span>
+        <span class="lang en hidden">My Documents</span>
+    </a>
+    <a class="desktop-icon" href="#" onclick="openWindow(); return false;">
+        <img src="img/ie-icon.png" class="icon" alt="Portfólio">
+        <span class="lang pt">Portfólio</span>
+        <span class="lang en hidden">Portfolio</span>
+    </a>
+    <a class="desktop-icon" href="#">
+        <img src="img/recycle-bin.png" class="icon" alt="Lixeira">
+        <span class="lang pt">Lixeira</span>
+        <span class="lang en hidden">Recycle Bin</span>
+    </a>
+</div>
 
-        <!-- ABOUT -->
-        <section id="about" class="section">
-            <h2>Sobre mim</h2>
-
-            <p class="lang pt">
-Sou focado em soluções práticas, estáveis e eficientes.
-Professor de Inglês, Professor de História e Prompt Engineer.
-Tenho interesse especial em sistemas simples, arquitetura durável,
-simulação, produtividade intelectual e ferramentas que resistem ao tempo.
-            </p>
-
-            <p class="lang pt">
-Minha abordagem valoriza software funcional, previsível e legível —
-inspirada na web clássica, em sistemas legados bem projetados
-e em aplicações que resolvem problemas reais sem excesso de abstração.
-            </p>
-
-            <p class="lang pt">
-Formação e áreas relevantes:
-<ul class="lang pt">
-    <li>Licenciatura em História (em andamento)</li>
-    <li>Professor de Inglês (docência e uso técnico)</li>
-    <li>Técnico em Segurança do Trabalho</li>
-    <li>Uso avançado de IA e LLMs como ferramenta técnica</li>
-    <li>Desenvolvimento Web clássico (HTML, CSS, JavaScript)</li>
-</ul>
-            </p>
-
-            <p class="lang en hidden">
-I am focused on practical, stable and efficient solutions.
-English Teacher, History Teacher and Prompt Engineer.
-I have a strong interest in simple systems, durable architecture,
-simulation, intellectual productivity and long-lasting tools.
-            </p>
-
-            <p class="lang en hidden">
-My approach values functional, predictable and readable software —
-inspired by the classic web, well-designed legacy systems
-and applications that solve real problems without unnecessary abstraction.
-            </p>
-
-            <p class="lang en hidden">
-Background and relevant areas:
-<ul class="lang en hidden">
-    <li>History degree (in progress)</li>
-    <li>English Teacher (teaching and technical usage)</li>
-    <li>Occupational Safety Technician</li>
-    <li>Advanced use of AI and LLMs as technical tools</li>
-    <li>Classic Web Development (HTML, CSS, JavaScript)</li>
-</ul>
-            </p>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="projects" class="section hidden">
-            <h2>Projetos</h2>
-
-            <div class="project">
-                <h3>Computabilis</h3>
-                <p class="lang pt">
-Ferramenta simples de gestão financeira, com gráfico de pizza em tempo real,
-ideal para organizar receitas e despesas de forma clara, visual e objetiva.
-                </p>
-                <p class="lang en hidden">
-A simple financial management tool with a real-time pie chart,
-designed to organize income and expenses clearly and objectively.
-                </p>
+<!-- Start Menu -->
+<div id="start-menu" class="start-menu">
+    <div class="start-menu-header">
+        <div class="user-avatar"></div>
+        <span class="user-name">Ludd</span>
+    </div>
+    <div class="start-menu-body">
+        <div class="start-menu-left">
+            <div class="start-menu-item pinned" onclick="openWindow(); toggleStartMenu();">
+                <img src="img/ie-icon.png" alt="IE">
+                <div>
+                    <strong>Internet Explorer</strong>
+                    <span class="lang pt">Portfólio</span>
+                    <span class="lang en hidden">Portfolio</span>
+                </div>
             </div>
-
-            <div class="project">
-                <h3>Studium</h3>
-                <p class="lang pt">
-Ferramenta de estudos focada em organização, método clássico,
-planejamento de longo prazo e disciplina acadêmica.
-                </p>
-                <p class="lang en hidden">
-A study tool focused on organization, classical methods,
-long-term planning and academic discipline.
-                </p>
+            <div class="start-menu-separator"></div>
+            <div class="start-menu-item">
+                <img src="img/folder.png" alt="Folder">
+                <span class="lang pt">Meus Documentos</span>
+                <span class="lang en hidden">My Documents</span>
             </div>
-
-            <div class="project">
-                <h3>ATLAS</h3>
-                <p class="lang pt">
-Plataforma experimental de simulação e análise estratégica.
-Voltada para modelagem econômica, planejamento e visualização de cenários.
-Atualmente em fase final de depuração.
-                </p>
-                <p class="lang en hidden">
-An experimental simulation and strategic analysis platform.
-Focused on economic modeling, planning and scenario visualization.
-Currently in final debugging stage.
-                </p>
+            <div class="start-menu-item">
+                <img src="img/folder.png" alt="Folder">
+                <span class="lang pt">Minhas Imagens</span>
+                <span class="lang en hidden">My Pictures</span>
             </div>
-
-            <div class="project">
-                <h3>Fastlog Analyzer</h3>
-                <p class="lang pt">
-Ferramenta de análise e organização de dados operacionais,
-com foco em leitura rápida, clareza e apoio à tomada de decisão.
-                </p>
-                <p class="lang en hidden">
-An operational data analysis tool focused on fast reading,
-clarity and decision-making support.
-                </p>
+            <div class="start-menu-item">
+                <img src="img/my-computer.png" alt="PC">
+                <span class="lang pt">Meu Computador</span>
+                <span class="lang en hidden">My Computer</span>
             </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="section hidden">
-            <h2>Contato</h2>
-
-            <p class="lang pt">
-Email: <strong>hbrslud@gmail.com</strong><br>
-GitHub: <strong><a href="https://github.com/LuddEvergard3n" target="_blank">github.com/LuddEvergard3n</a></strong><br>
-LinkedIn: <strong><a href="https://www.linkedin.com/in/herbertbr-sorg-ludka/" target="_blank">linkedin.com/in/herbertbr-sorg-ludka</a></strong>
-            </p>
-
-            <p class="lang en hidden">
-Email: <strong>hbrslud@gmail.com</strong><br>
-GitHub: <strong><a href="https://github.com/LuddEvergard3n" target="_blank">github.com/LuddEvergard3n</a></strong><br>
-LinkedIn: <strong><a href="https://www.linkedin.com/in/herbertbr-sorg-ludka/" target="_blank">linkedin.com/in/herbertbr-sorg-ludka</a></strong>
-            </p>
-        </section>
-
+            <div class="start-menu-separator"></div>
+            <div class="start-menu-item all-programs">
+                <span class="lang pt">Todos os Programas</span>
+                <span class="lang en hidden">All Programs</span>
+                <span class="arrow">&raquo;</span>
+            </div>
+        </div>
+        <div class="start-menu-right">
+            <div class="start-menu-item">
+                <span class="lang pt">Painel de Controle</span>
+                <span class="lang en hidden">Control Panel</span>
+            </div>
+            <div class="start-menu-item">
+                <span class="lang pt">Ajuda e Suporte</span>
+                <span class="lang en hidden">Help and Support</span>
+            </div>
+            <div class="start-menu-item">
+                <span class="lang pt">Pesquisar</span>
+                <span class="lang en hidden">Search</span>
+            </div>
+            <div class="start-menu-item">
+                <span class="lang pt">Executar...</span>
+                <span class="lang en hidden">Run...</span>
+            </div>
+        </div>
+    </div>
+    <div class="start-menu-footer">
+        <button class="start-footer-btn logoff">
+            <span class="lang pt">Fazer Logoff</span>
+            <span class="lang en hidden">Log Off</span>
+        </button>
+        <button class="start-footer-btn shutdown">
+            <span class="lang pt">Desligar</span>
+            <span class="lang en hidden">Turn Off</span>
+        </button>
     </div>
 </div>
 
-<script>
-function showSection(id) {
-    document.querySelectorAll('.section').forEach(sec => sec.classList.add('hidden'));
-    document.getElementById(id).classList.remove('hidden');
-}
+<!-- Window -->
+<div class="window active">
+    <div class="title-bar">
+        <div class="title-bar-left">
+            <img src="img/ie-icon.png" class="title-bar-icon" alt="IE">
+            <span class="title-bar-text lang pt">Meu Portfólio - Microsoft Internet Explorer</span>
+            <span class="title-bar-text lang en hidden">My Portfolio - Microsoft Internet Explorer</span>
+        </div>
+        <div class="window-controls">
+            <button class="window-btn btn-minimize">_</button>
+            <button class="window-btn btn-maximize">&#9633;</button>
+            <button class="window-btn btn-close">&#10005;</button>
+        </div>
+    </div>
 
-function setLang(lang) {
-    document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.' + lang).forEach(el => el.classList.remove('hidden'));
-    localStorage.setItem('lang', lang);
-}
+    <div class="toolbar">
+        <button class="toolbar-btn" disabled>&larr; <span class="lang pt">Voltar</span><span class="lang en hidden">Back</span></button>
+        <button class="toolbar-btn" disabled>&rarr;</button>
+        <button class="toolbar-btn"><span class="lang pt">Atualizar</span><span class="lang en hidden">Refresh</span></button>
+        <button class="toolbar-btn"><span class="lang pt">Início</span><span class="lang en hidden">Home</span></button>
+        <div class="toolbar-sep"></div>
+        <button class="toolbar-btn"><span class="lang pt">Favoritos</span><span class="lang en hidden">Favorites</span></button>
+        <div class="toolbar-sep"></div>
+        <div class="lang-switch">
+            <button class="active" onclick="setLang('pt', event)">PT</button>
+            <button onclick="setLang('en', event)">EN</button>
+        </div>
+    </div>
 
-const savedLang = localStorage.getItem('lang') || 'pt';
-setLang(savedLang);
-</script>
+    <div class="address-bar">
+        <span class="lang pt">Endereço</span>
+        <span class="lang en hidden">Address</span>
+        <input type="text" id="address" value="http://ludd.portfolio/sobre" readonly>
+        <button class="go-btn">Ir</button>
+    </div>
 
+    <div class="nav-bar">
+        <button class="nav-tab active" onclick="showSection('about', event)">
+            <span class="lang pt">Sobre</span>
+            <span class="lang en hidden">About</span>
+        </button>
+        <button class="nav-tab" onclick="showSection('projects', event)">
+            <span class="lang pt">Projetos</span>
+            <span class="lang en hidden">Projects</span>
+        </button>
+        <button class="nav-tab" onclick="showSection('contact', event)">
+            <span class="lang pt">Contato</span>
+            <span class="lang en hidden">Contact</span>
+        </button>
+    </div>
+
+    <div class="content">
+        <!-- ABOUT SECTION -->
+        <div id="about" class="section">
+            <div class="lang pt">
+                <h2>Sobre Mim</h2>
+                <p>Desenvolvedor com experiência em criação de interfaces web e engenharia de prompts para modelos de linguagem (LLMs).</p>
+                <p><strong>Habilidades:</strong></p>
+                <ul>
+                    <li>Engenharia de Prompts para LLMs</li>
+                    <li>Desenvolvimento Web (HTML, CSS, JavaScript)</li>
+                    <li>C e WebAssembly (WASM)</li>
+                </ul>
+            </div>
+            <div class="lang en hidden">
+                <h2>About Me</h2>
+                <p>Developer with experience in web interface creation and prompt engineering for large language models (LLMs).</p>
+                <p><strong>Skills:</strong></p>
+                <ul>
+                    <li>Prompt Engineering for LLMs</li>
+                    <li>Web Development (HTML, CSS, JavaScript)</li>
+                    <li>C and WebAssembly (WASM)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PROJECTS SECTION -->
+        <div id="projects" class="section hidden">
+            <div class="lang pt">
+                <h2>Projetos</h2>
+                
+                <div class="project">
+                    <h3>Computabilis</h3>
+                    <p>Sistema de gestão financeira pessoal.</p>
+                    <a href="https://luddevergard3n.github.io/Computabilis/" class="project-link">Ver projeto &rarr;</a>
+                </div>
+                
+                <div class="project">
+                    <h3>Studium</h3>
+                    <p>Plataforma educacional para melhorar a concentração e gerenciar estudos.</p>
+                    <a href="https://luddevergard3n.github.io/Studium/" class="project-link">Ver projeto &rarr;</a>
+                </div>
+                
+                <div class="project">
+                    <h3>ATLAS</h3>
+                    <p>Sistema de gerenciamento, previsão e análise de dados finaceiros para investidores, empresas ou holdings.</p>
+                    <a href="https://luddevergard3n.github.io/atlas-lite/" class="project-link">Ver projeto &rarr;</a>
+                </div>
+                
+                <div class="project">
+                    <h3>Fastlog Analyzer</h3>
+                    <p>Ferramenta de análise de logs em tempo real.</p>
+                    <a href="https://github.com/LuddEvergard3n/fastlog-analyzer" class="project-link">Ver projeto &rarr;</a>
+                </div>
+                
+                <div class="project">
+                    <h3>ARES</h3>
+                    <p>Sistema básico de gestão de dados financeiros.</p>
+                    <a href="https://github.com/LuddEvergard3n/Ares" class="project-link">Ver projeto &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="lang en hidden">
+                <h2>Projects</h2>
+                
+                <div class="project">
+                    <h3>Computabilis</h3>
+                    <p>Personal financial management system.</p>
+                    <a href="https://luddevergard3n.github.io/Computabilis/" class="project-link">View project &rarr;</a>
+                </div>
+                
+                <div class="project">
+                    <h3>Studium</h3>
+                    <p>Educational platform to improve concentration and manage studies.</p>
+                    <a href="https://luddevergard3n.github.io/Studium/" class="project-link">View project &rarr;</a>
+                </div>
+                
+                <div class="project">
+                    <h3>ATLAS</h3>
+                    <p>Financial data management, forecasting, and analysis system for investors, companies, or holding companies.</p>
+                    <a href="https://luddevergard3n.github.io/atlas-lite/" class="project-link">View project &rarr;</a>
+                </div>
+                
+                <div class="project">
+                    <h3>Fastlog Analyzer</h3>
+                    <p>Real-time log analysis tool.</p>
+                    <a href="https://github.com/LuddEvergard3n/fastlog-analyzer" class="project-link">View project &rarr;</a>
+                </div>
+                
+                <div class="project">
+                    <h3>ARES</h3>
+                    <p>Basic financial data management system.</p>
+                    <a href="https://github.com/LuddEvergard3n/Ares" class="project-link">View project &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT SECTION -->
+        <div id="contact" class="section hidden">
+            <div class="lang pt">
+                <h2>Contato</h2>
+                
+                <div class="contact-item">
+                    <span>Email:</span>
+                    <a href="mailto:hbrslud@gmail.com">hbrslud@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span>GitHub:</span>
+                    <a href="https://github.com/LuddEvergard3n" target="_blank">github.com/LuddEvergard3n</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span>LinkedIn:</span>
+                    <a href="https://www.linkedin.com/in/herbertbr-sorg-ludka/" target="_blank">linkedin.com/in/herbertbr-sorg-ludka</a>
+                </div>
+            </div>
+            
+            <div class="lang en hidden">
+                <h2>Contact</h2>
+                
+                <div class="contact-item">
+                    <span>Email:</span>
+                    <a href="mailto:hbrslud@gmail.com">hbrslud@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span>GitHub:</span>
+                    <a href="https://github.com/LuddEvergard3n" target="_blank">github.com/LuddEvergard3n</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span>LinkedIn:</span>
+                    <a href="https://www.linkedin.com/in/herbertbr-sorg-ludka/" target="_blank">linkedin.com/in/herbertbr-sorg-ludka</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="status-bar">
+        <span class="lang pt">Concluído</span>
+        <span class="lang en hidden">Done</span>
+    </div>
+</div>
+
+<!-- Taskbar -->
+<div class="taskbar">
+    <button class="start-button" onclick="toggleStartMenu()">
+        <img src="img/windows-logo.png" alt="Windows">
+        <span class="lang pt">Iniciar</span>
+        <span class="lang en hidden">Start</span>
+    </button>
+    <div class="taskbar-programs">
+        <div class="taskbar-item active" onclick="toggleWindow()">
+            <img src="img/ie-icon.png" alt="IE">
+            <span class="lang pt">Meu Portfólio</span>
+            <span class="lang en hidden">My Portfolio</span>
+        </div>
+    </div>
+    <div class="system-tray">
+        <span class="time" id="clock">00:00</span>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
