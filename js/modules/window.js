@@ -195,21 +195,24 @@ const WindowManager = {
     const onMouseMove = (e) => {
       if (!isDragging) return;
       
-      const deltaX = e.clientX - startX;
-      const deltaY = e.clientY - startY;
-      
-      let newLeft = startLeft + deltaX;
-      let newTop = startTop + deltaY;
-      
-      // Limites da tela
-      const maxLeft = window.innerWidth - 100;
-      const maxTop = window.innerHeight - 100;
-      
-      newLeft = Math.max(0, Math.min(newLeft, maxLeft));
-      newTop = Math.max(0, Math.min(newTop, maxTop));
-      
-      win.element.style.left = `${newLeft}px`;
-      win.element.style.top = `${newTop}px`;
+      // Usar requestAnimationFrame para performance otimizada
+      requestAnimationFrame(() => {
+        const deltaX = e.clientX - startX;
+        const deltaY = e.clientY - startY;
+        
+        let newLeft = startLeft + deltaX;
+        let newTop = startTop + deltaY;
+        
+        // Limites da tela
+        const maxLeft = window.innerWidth - 100;
+        const maxTop = window.innerHeight - 100;
+        
+        newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+        newTop = Math.max(0, Math.min(newTop, maxTop));
+        
+        win.element.style.left = `${newLeft}px`;
+        win.element.style.top = `${newTop}px`;
+      });
     };
     
     const onMouseUp = () => {
@@ -237,17 +240,20 @@ const WindowManager = {
     document.addEventListener('touchmove', (e) => {
       if (!isDragging) return;
       
-      const deltaX = e.touches[0].clientX - startX;
-      const deltaY = e.touches[0].clientY - startY;
-      
-      let newLeft = startLeft + deltaX;
-      let newTop = startTop + deltaY;
-      
-      newLeft = Math.max(0, Math.min(newLeft, window.innerWidth - 100));
-      newTop = Math.max(0, Math.min(newTop, window.innerHeight - 100));
-      
-      win.element.style.left = `${newLeft}px`;
-      win.element.style.top = `${newTop}px`;
+      // Usar requestAnimationFrame para performance otimizada
+      requestAnimationFrame(() => {
+        const deltaX = e.touches[0].clientX - startX;
+        const deltaY = e.touches[0].clientY - startY;
+        
+        let newLeft = startLeft + deltaX;
+        let newTop = startTop + deltaY;
+        
+        newLeft = Math.max(0, Math.min(newLeft, window.innerWidth - 100));
+        newTop = Math.max(0, Math.min(newTop, window.innerHeight - 100));
+        
+        win.element.style.left = `${newLeft}px`;
+        win.element.style.top = `${newTop}px`;
+      });
     }, { passive: true });
     
     document.addEventListener('touchend', onMouseUp);

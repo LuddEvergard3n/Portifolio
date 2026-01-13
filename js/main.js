@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Inicializar módulos na ordem correta
   try {
+    // 0. i18n (deve ser o primeiro para que outros módulos possam usar)
+    if (window.i18n) {
+      console.log('✅ i18n inicializado');
+    }
+    
     // 1. Boot Screen (tela de inicialização)
     if (window.BootScreen) {
       BootScreen.init();
@@ -42,10 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Window Manager (gerenciamento de janelas)
     if (window.WindowManager) {
       WindowManager.init();
+      // Registrar janela do Paint
+      WindowManager.register('paint');
       console.log('✅ Window Manager inicializado');
     }
     
-    // 7. Easter Eggs
+    // 7. Accessibility (acessibilidade e navegação por teclado)
+    if (window.Accessibility) {
+      Accessibility.init();
+      console.log('✅ Accessibility inicializado');
+    }
+    
+    // 8. Easter Eggs
     if (window.Clippy) {
       Clippy.init();
       console.log('✅ Clippy (Easter Egg) inicializado');
@@ -63,6 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('📋 Comandos disponíveis:');
     console.log('  - Ctrl + Shift + C (3x) = Ativar Clippy');
     console.log('  - Ctrl + Shift + M (3x) = Ativar Minesweeper');
+    console.log('  - ESC = Fechar janela ativa');
+    console.log('  - Alt + F4 = Fechar janela ativa');
+    console.log('  - Tab = Navegar pelos ícones');
+    console.log('  - Setas = Navegar pelos ícones do desktop');
+    console.log('  - Enter = Ativar ícone focado');
     console.log('');
     
   } catch (error) {

@@ -139,22 +139,22 @@
   
   /* ==================== TAMANHOS ==================== */
   
-  --taskbar-height: 30px;
-  --title-bar-height: 26px;
-  --toolbar-height: 32px;
-  --address-bar-height: 28px;
-  --status-bar-height: 22px;
+  --taskbar-height: 40px;
+  --title-bar-height: 30px;
+  --toolbar-height: 38px;
+  --address-bar-height: 32px;
+  --status-bar-height: 24px;
   
-  --desktop-icon-size: 48px;
-  --taskbar-icon-size: 16px;
-  --title-bar-icon-size: 16px;
+  --desktop-icon-size: 64px;
+  --taskbar-icon-size: 24px;
+  --title-bar-icon-size: 20px;
   
   --window-min-width: 600px;
   --window-min-height: 400px;
   --window-max-width: calc(100vw - 40px);
   --window-max-height: calc(100vh - 70px);
   
-  --start-menu-width: 380px;
+  --start-menu-width: 420px;
   
   /* ==================== ESPAÇAMENTOS ==================== */
   
@@ -208,4 +208,30 @@
   --z-index-boot: 9999;
   --z-index-clippy: 10000;
   --z-index-minesweeper: 10001;
+}
+
+/* ==================== ACESSIBILIDADE ==================== */
+
+/* Classe para conteúdo visível apenas para screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Indicador de foco visível para navegação por teclado */
+*:focus-visible {
+  outline: 2px solid var(--xp-blue-primary);
+  outline-offset: 2px;
+}
+
+/* Remover outline padrão, mas manter para navegação por teclado */
+*:focus:not(:focus-visible) {
+  outline: none;
 }

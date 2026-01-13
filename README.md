@@ -24,24 +24,29 @@ Portfólio pessoal com tema nostálgico do Windows XP, desenvolvido com HTML, CS
 
 ### Funcionalidades Principais
 - **Tela de Boot**: Animação autêntica do Windows XP na inicialização
-- **Janelas Arrastáveis**: Arraste janelas pela barra de título
+- **Janelas Arrastáveis**: Arraste janelas pela barra de título com performance otimizada
 - **Redimensionamento**: Redimensione janelas pelos cantos e bordas
 - **Maximizar/Minimizar**: Controles totalmente funcionais
 - **Menu Iniciar**: Menu com design fiel ao Windows XP
 - **Barra de Tarefas**: Com relógio em tempo real
-- **Múltiplos Idiomas**: Suporte para Português e Inglês
+- **Múltiplos Idiomas**: Suporte para Português e Inglês com sistema i18n centralizado
 - **Separação de Projetos**: Organizado em "Sites" e "Projetos"
+- **Acessibilidade**: Navegação por teclado completa (Tab, Setas, Enter, ESC, Alt+F4)
 
 ### Easter Eggs
 - **Clippy**: Assistente nostálgico do Office
 - **Campo Minado**: Jogo completamente funcional
+- **Paint**: Versão simplificada do Paint do Windows XP com ferramentas básicas de desenho
 
 ### Otimizações
 - CSS modularizado com variáveis
 - JavaScript modular e reutilizável
-- Animações suaves com transições CSS
+- Animações suaves com transições CSS e requestAnimationFrame
 - Sem dependências externas
 - Configuração centralizada para fácil manutenção
+- Sistema de internacionalização (i18n) sem duplicação
+- SEO otimizado com meta tags completas e Schema.org structured data
+- Navegação por teclado e ARIA labels para acessibilidade
 
 ## 🛠 Tecnologias
 
@@ -56,26 +61,32 @@ Portfólio pessoal com tema nostálgico do Windows XP, desenvolvido com HTML, CS
 portfolio/
 │
 ├── index.html              # HTML principal
+├── sitemap.xml            # Sitemap para SEO
+├── robots.txt             # Configuração para crawlers
 │
 ├── css/                    # Estilos modulares
-│   ├── variables.css      # Variáveis CSS (cores, tamanhos, etc)
+│   ├── variables.css      # Variáveis CSS (cores, tamanhos, etc) + acessibilidade
 │   ├── boot.css           # Tela de inicialização
 │   ├── desktop.css        # Desktop, ícones, taskbar, menu
 │   ├── window.css         # Janelas e controles
 │   ├── content.css        # Conteúdo (projetos, skills, contato)
-│   └── eastereggs.css     # Clippy e Minesweeper
+│   ├── eastereggs.css     # Clippy e Minesweeper
+│   └── paint.css          # Paint do Windows XP
 │
 ├── js/                     # JavaScript modular
-│   ├── config.js          # Configurações (projetos, dados pessoais)
+│   ├── config.js          # Configurações (usa i18n)
 │   ├── main.js            # Inicializador principal
 │   │
 │   └── modules/           # Módulos organizados
+│       ├── i18n.js        # Sistema de internacionalização
 │       ├── boot.js        # Gerencia tela de boot
 │       ├── clock.js       # Relógio da taskbar
 │       ├── language.js    # Troca de idiomas
 │       ├── startMenu.js   # Menu Iniciar
 │       ├── navigation.js  # Navegação entre seções
-│       ├── window.js      # Gerenciamento de janelas
+│       ├── window.js      # Gerenciamento de janelas (com requestAnimationFrame)
+│       ├── accessibility.js # Navegação por teclado e ARIA
+│       ├── paint.js       # Paint do Windows XP
 │       ├── clippy.js      # Easter egg: Clippy
 │       └── minesweeper.js # Easter egg: Campo Minado
 │
@@ -129,43 +140,57 @@ Acesse: `http://localhost:8000`
 4. Redimensione pelas bordas e cantos
 5. Troque idiomas com os botões PT/EN
 
+### Atalhos de Teclado
+
+- **Tab**: Navega entre os elementos focáveis
+- **Setas**: Navega entre ícones do desktop
+- **Enter**: Ativa o elemento focado
+- **ESC**: Fecha a janela ativa
+- **Alt + F4**: Fecha a janela ativa
+
 ### Adicionar Novos Projetos
 
-Edite o arquivo `js/config.js`:
+Edite o arquivo `js/modules/i18n.js` na seção de traduções:
 
 ```javascript
-sites: {
-  pt: [
+translations: {
+  pt: {
+    'project.meuProjeto': 'Nome do Projeto',
+    'project.meuProjeto.desc': 'Descrição do projeto',
+  },
+  en: {
+    'project.meuProjeto': 'Project Name',
+    'project.meuProjeto.desc': 'Project description',
+  }
+}
+```
+
+E adicione no método `getProjects()`:
+
+```javascript
+getProjects(lang = null) {
+  const language = lang || this.currentLanguage;
+  return [
+    // ... projetos existentes
     {
-      name: 'Novo Site',
-      description: 'Descrição do site',
+      name: this.t('project.meuProjeto', language),
+      description: this.t('project.meuProjeto.desc', language),
       url: 'https://exemplo.com',
       tags: ['HTML', 'CSS', 'JS']
     }
-    // ... adicione mais sites
-  ],
-  en: [
-    // ... versão em inglês
-  ]
+  ];
 }
 ```
 
 ### Personalizar Skills
 
-Também em `js/config.js`:
+Edite `js/modules/i18n.js`:
 
 ```javascript
-about: {
+translations: {
   pt: {
-    skills: [
-      {
-        category: 'Nova Categoria',
-        items: [
-          'Skill 1 - Descrição',
-          'Skill 2 - Descrição'
-        ]
-      }
-    ]
+    'skills.novaCategoria': 'Nova Categoria',
+    'skill.novaSkill': 'Nova Skill - Descrição detalhada',
   }
 }
 ```
@@ -206,9 +231,10 @@ window.ModuleName = ModuleName;
 1. `DOMContentLoaded` event
 2. `main.js` carrega configuração
 3. Módulos são inicializados em ordem:
-   - BootScreen → Clock → Language → StartMenu → Navigation → WindowManager → Easter Eggs
+   - i18n (sistema de traduções) → BootScreen → Clock → Language → StartMenu → Navigation → WindowManager → Accessibility → Easter Eggs
 4. Conteúdo dinâmico é renderizado
 5. Event listeners são registrados
+6. Navegação por teclado ativada
 
 ### Gerenciamento de Estado
 
@@ -279,21 +305,27 @@ Todas as cores e tamanhos estão centralizados em `css/variables.css`:
 - Clique direito para colocar bandeira
 - Clique no rosto para reiniciar
 
-## ⚡ Desempenho
+## Desempenho
 
 ### Otimizações Implementadas
 
 - **CSS**: Uso de `transform` e `opacity` para animações (GPU-accelerated)
-- **JavaScript**: Event delegation onde possível
+- **JavaScript**: 
+  - Event delegation onde possível
+  - `requestAnimationFrame` para drag e animações suaves
+  - Módulos carregados de forma otimizada
 - **Imagens**: WebP para Clippy, PNG otimizado para ícones
 - **Sem reflow**: Mudanças de estilo em batch
 - **Lazy rendering**: Conteúdo renderizado sob demanda
+- **i18n**: Sistema centralizado evita duplicação de código
 
-### Métricas
+### Métricas Estimadas
 
 - **First Contentful Paint**: ~0.5s
 - **Time to Interactive**: ~1.0s
-- **Total Bundle Size**: ~150KB (sem compressão)
+- **Total Bundle Size**: ~160KB (sem compressão)
+- **JavaScript**: ~8KB (modularizado)
+- **CSS**: ~15KB (variáveis centralizadas)
 
 ##  Responsividade
 
@@ -323,6 +355,24 @@ Todas as cores e tamanhos estão centralizados em `css/variables.css`:
 - Touch events para drag/resize
 - Grid de projetos adaptativo
 
+## Acessibilidade
+
+### Recursos de Acessibilidade
+
+- **Navegação por Teclado**: 
+  - Tab, Setas, Enter, ESC, Alt+F4
+  - Foco visível em todos os elementos interativos
+- **ARIA Labels**: 
+  - role="button" em ícones
+  - aria-label em elementos interativos
+  - aria-live regions para anúncios dinâmicos
+- **Screen Readers**:
+  - Classe .sr-only para conteúdo exclusivo
+  - Estrutura semântica correta
+  - Anúncios de mudanças de estado
+- **Contraste**: Cores atendem WCAG 2.1 AA
+- **Focus Management**: Foco gerenciado em janelas modais
+
 ##  Contribuindo
 
 Contribuições são bem-vindas! Por favor:
@@ -342,22 +392,6 @@ Contribuições são bem-vindas! Por favor:
 ##  Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-
-##  Roadmap
-
-### v2.1.0 (Próxima)
-- [ ] Múltiplas janelas simultâneas
-- [ ] Histórico de navegação funcional
-- [ ] Animações de minimizar para taskbar
-- [ ] Tema modo escuro (High Contrast)
-
-### v3.0.0 (Futuro)
-- [ ] PWA com offline support
-- [ ] Mais jogos (Solitaire, Pinball)
-- [ ] Sistema de arquivos simulado
-- [ ] Paint clone interativo
 
 ---
 

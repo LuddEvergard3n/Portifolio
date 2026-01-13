@@ -78,40 +78,77 @@
 
 .window-controls {
   display: flex;
-  gap: var(--border-width-thick);
+  gap: 2px;
 }
 
-.window-btn {
+.minimize-btn,
+.maximize-btn,
+.close-btn {
   width: 21px;
   height: 21px;
-  border: var(--border-width) solid var(--xp-white);
-  border-radius: var(--border-radius-sm);
-  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+  font-size: 11px;
   font-weight: bold;
+  font-family: Marlett, sans-serif;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: filter var(--transition-fast);
+  transition: filter 0.15s ease;
+  color: white;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 1px 0px rgba(255,255,255,0.3) inset;
 }
 
-.window-btn:hover {
-  filter: brightness(1.2);
+.minimize-btn,
+.maximize-btn {
+  background: linear-gradient(180deg, #3c81f3 0%, #2d6cd9 100%);
 }
 
-.btn-minimize {
-  background: var(--gradient-btn-blue);
-  color: var(--xp-white);
+.close-btn {
+  background: linear-gradient(180deg, #d94a4a 0%, #b93333 100%);
 }
 
-.btn-maximize {
-  background: var(--gradient-btn-blue);
-  color: var(--xp-white);
+.minimize-btn:hover,
+.maximize-btn:hover {
+  background: linear-gradient(180deg, #5aa0e9 0%, #3d7ce9 100%);
 }
 
-.btn-close {
-  background: linear-gradient(180deg, var(--xp-red-primary) 0%, var(--xp-red-dark) 100%);
-  color: var(--xp-white);
+.close-btn:hover {
+  background: linear-gradient(180deg, #e95a5a 0%, #c94343 100%);
+}
+
+.minimize-btn:active,
+.maximize-btn:active,
+.close-btn:active {
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.4) inset;
+}
+
+/* Símbolos dos botões */
+.minimize-btn::before {
+  content: '';
+  width: 7px;
+  height: 2px;
+  background: white;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.maximize-btn::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border: 2px solid white;
+  border-top-width: 3px;
+  display: block;
+}
+
+.close-btn::before {
+  content: '✕';
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
 }
 
 /* ==================== TOOLBAR ==================== */
