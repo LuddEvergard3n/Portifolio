@@ -1,11 +1,11 @@
-# 🖥️ Windows XP Portfolio
+#  Windows XP Portfolio
 
 Portfólio pessoal com tema nostálgico do Windows XP, desenvolvido com HTML, CSS e JavaScript vanilla. Inclui funcionalidades interativas, suporte a múltiplos idiomas (PT/EN) e easter eggs.
 
 ![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## 📋 Índice
+##  Índice
 
 - [Características](#-características)
 - [Tecnologias](#-tecnologias)
@@ -20,7 +20,7 @@ Portfólio pessoal com tema nostálgico do Windows XP, desenvolvido com HTML, CS
 - [Contribuindo](#-contribuindo)
 - [Licença](#-licença)
 
-## ✨ Características
+##  Características
 
 ### Funcionalidades Principais
 - **Tela de Boot**: Animação autêntica do Windows XP na inicialização
@@ -33,8 +33,8 @@ Portfólio pessoal com tema nostálgico do Windows XP, desenvolvido com HTML, CS
 - **Separação de Projetos**: Organizado em "Sites" e "Projetos"
 
 ### Easter Eggs
-- **Clippy**: Assistente nostálgico do Office (Ctrl + Shift + C × 3)
-- **Campo Minado**: Jogo completamente funcional (Ctrl + Shift + M × 3)
+- **Clippy**: Assistente nostálgico do Office
+- **Campo Minado**: Jogo completamente funcional
 
 ### Otimizações
 - CSS modularizado com variáveis
@@ -50,7 +50,7 @@ Portfólio pessoal com tema nostálgico do Windows XP, desenvolvido com HTML, CS
 - **JavaScript (ES6+)**: Módulos, Classes, Arrow Functions
 - **Sem Frameworks**: Vanilla JS puro
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```
 portfolio/
@@ -89,7 +89,7 @@ portfolio/
     └── Clippy.webp        # Clippy animado
 ```
 
-## 🚀 Instalação
+##  Instalação
 
 ### Opção 1: Clone do Repositório
 
@@ -119,7 +119,7 @@ php -S localhost:8000
 
 Acesse: `http://localhost:8000`
 
-## 📖 Uso
+##  Uso
 
 ### Navegação Básica
 
@@ -128,13 +128,6 @@ Acesse: `http://localhost:8000`
 3. Arraste janelas pela barra de título
 4. Redimensione pelas bordas e cantos
 5. Troque idiomas com os botões PT/EN
-
-### Atalhos de Teclado
-
-| Atalho | Função |
-|--------|--------|
-| `Ctrl + Shift + C` (×3) | Ativar Clippy |
-| `Ctrl + Shift + M` (×3) | Ativar Campo Minado |
 
 ### Adicionar Novos Projetos
 
@@ -177,7 +170,7 @@ about: {
 }
 ```
 
-## 🏗 Arquitetura
+##  Arquitetura
 
 ### Padrão de Design
 
@@ -235,7 +228,7 @@ const WindowManager = {
 };
 ```
 
-## ⚙️ Configuração
+##  Configuração
 
 ### Variáveis CSS
 
@@ -269,16 +262,16 @@ Todas as cores e tamanhos estão centralizados em `css/variables.css`:
 --transition-normal: 0.5s ease;  /* Mais lento */
 ```
 
-## 🎮 Easter Eggs
+##  Easter Eggs
 
-### Clippy (Ctrl + Shift + C × 3)
+### Clippy
 
 - Assistente animado com frases nostálgicas
 - Mensagens contextuais em PT/EN
 - Clique no Clippy para trocar mensagens
 - Fechar com botão X no canto
 
-### Campo Minado (Ctrl + Shift + M × 3)
+### Campo Minado
 
 - Jogo completamente funcional
 - Grade 9×9 com 10 minas
@@ -302,14 +295,7 @@ Todas as cores e tamanhos estão centralizados em `css/variables.css`:
 - **Time to Interactive**: ~1.0s
 - **Total Bundle Size**: ~150KB (sem compressão)
 
-### Melhorias Futuras
-
-- [ ] Implementar lazy loading de imagens
-- [ ] Minificar CSS/JS para produção
-- [ ] Adicionar service worker (PWA)
-- [ ] Implementar code splitting
-
-## 📱 Responsividade
+##  Responsividade
 
 ### Breakpoints
 
@@ -337,7 +323,7 @@ Todas as cores e tamanhos estão centralizados em `css/variables.css`:
 - Touch events para drag/resize
 - Grid de projetos adaptativo
 
-## 🤝 Contribuindo
+##  Contribuindo
 
 Contribuições são bem-vindas! Por favor:
 
@@ -353,13 +339,13 @@ Contribuições são bem-vindas! Por favor:
 - **JavaScript**: camelCase para variáveis, PascalCase para módulos
 - **Commits**: Conventional Commits (feat:, fix:, docs:, etc)
 
-## 📝 Licença
+##  Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
-## 🎯 Roadmap
+##  Roadmap
 
 ### v2.1.0 (Próxima)
 - [ ] Múltiplas janelas simultâneas
@@ -375,7 +361,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ---
 
-## 📧 Contato
+##  Contato
 
 **Ludd**
 - Email: hbrslud@gmail.com
@@ -385,6 +371,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ---
 
 <div align="center">
-  <p>Feito com ❤️ e nostalgia dos anos 2000</p>
+  <p>Feito com nostalgia dos anos 2000</p>
   <p>Windows XP © Microsoft Corporation</p>
 </div>
