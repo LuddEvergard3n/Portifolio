@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Ludd - Desenvolvedor Full-Stack especializado em Web Development e LLMs">
+    <meta name="keywords" content="desenvolvedor, web development, JavaScript, HTML, CSS, C, WebAssembly, LLM, portfolio">
+    <meta name="author" content="Ludd">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ludd Portfolio - Windows XP">
+    <meta property="og:description" content="Portfólio nostálgico com tema Windows XP">
+    <meta property="og:type" content="website">
+    
     <title>Ludd Portfolio - Windows XP</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/windows-logo.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/boot.css">
+    <link rel="stylesheet" href="css/desktop.css">
+    <link rel="stylesheet" href="css/window.css">
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/eastereggs.css">
 </head>
 <body>
 
-<!-- Boot Screen -->
+<!-- ==================== BOOT SCREEN ==================== -->
 <div id="boot-screen" class="boot-screen">
     <div class="boot-logo">
         <img src="img/windows-logo.png" class="boot-windows-logo" alt="Windows Logo">
@@ -29,31 +48,105 @@
     <div class="boot-ms-logo">Microsoft</div>
 </div>
 
-<!-- Desktop Icons -->
+<!-- ==================== DESKTOP ICONS ==================== -->
 <div class="desktop-icons">
-    <a class="desktop-icon" href="#">
-        <img src="img/my-computer.png" class="icon" alt="Meu Computador">
+    <!-- Linha 1 -->
+    <a class="desktop-icon" href="#" onclick="event.preventDefault();">
+        <img src="img/My_Computer.ico" class="icon" alt="Meu Computador">
         <span class="lang pt">Meu Computador</span>
         <span class="lang en hidden">My Computer</span>
     </a>
-    <a class="desktop-icon" href="#">
-        <img src="img/folder.png" class="icon" alt="Meus Documentos">
+    
+    <a class="desktop-icon" href="#" onclick="event.preventDefault();">
+        <img src="img/Folder_Closed.ico" class="icon" alt="Meus Documentos">
         <span class="lang pt">Meus Documentos</span>
         <span class="lang en hidden">My Documents</span>
     </a>
+    
+    <a class="desktop-icon" href="#" onclick="event.preventDefault();">
+        <img src="img/recycle-bin.png" class="icon" alt="Lixeira">
+        <span class="lang pt">Lixeira</span>
+        <span class="lang en hidden">Recycle Bin</span>
+    </a>
+    
+    <!-- Linha 2 - Easter Eggs -->
+    <a class="desktop-icon easter-egg" href="#" onclick="Clippy.toggle(); return false;">
+        <img src="img/clippy-icon.png" class="icon" alt="Clippy">
+        <span class="lang pt">Ajuda Office</span>
+        <span class="lang en hidden">Office Help</span>
+    </a>
+    
+    <a class="desktop-icon easter-egg" href="#" onclick="Minesweeper.toggle(); return false;">
+        <img src="img/Minesweeper.ico" class="icon" alt="Campo Minado">
+        <span class="lang pt">Campo Minado</span>
+        <span class="lang en hidden">Minesweeper</span>
+    </a>
+    
+    <a class="desktop-icon" href="#" onclick="event.preventDefault();">
+        <img src="img/Paint.png" class="icon" alt="Paint">
+        <span class="lang pt">Paint</span>
+        <span class="lang en hidden">Paint</span>
+    </a>
+    
+    <!-- Linha 3 -->
     <a class="desktop-icon" href="#" onclick="openWindow(); return false;">
         <img src="img/ie-icon.png" class="icon" alt="Portfólio">
         <span class="lang pt">Portfólio</span>
         <span class="lang en hidden">Portfolio</span>
     </a>
-    <a class="desktop-icon" href="#">
-        <img src="img/recycle-bin.png" class="icon" alt="Lixeira">
-        <span class="lang pt">Lixeira</span>
-        <span class="lang en hidden">Recycle Bin</span>
+    
+    <a class="desktop-icon" href="#" onclick="event.preventDefault();">
+        <img src="img/windows-media-player-icon.webp" class="icon" alt="Windows Media Player">
+        <span class="lang pt">Windows Media Player</span>
+        <span class="lang en hidden">Windows Media Player</span>
+    </a>
+    
+    <a class="desktop-icon" href="#" onclick="event.preventDefault();">
+        <img src="img/Windows-Messenger-icon.png" class="icon" alt="Messenger">
+        <span class="lang pt">Messenger</span>
+        <span class="lang en hidden">Messenger</span>
+    </a>
+    
+    <!-- Linha 4 -->
+    <a class="desktop-icon" href="#" onclick="event.preventDefault();">
+        <img src="img/My_Network_Places.ico" class="icon" alt="Meus Locais de Rede">
+        <span class="lang pt">Meus Locais de Rede</span>
+        <span class="lang en hidden">My Network Places</span>
+    </a>
+    
+    <a class="desktop-icon" href="#" onclick="event.preventDefault();">
+        <img src="img/System_Properties.ico" class="icon" alt="Painel de Controle">
+        <span class="lang pt">Painel de Controle</span>
+        <span class="lang en hidden">Control Panel</span>
+    </a>
+    
+    <a class="desktop-icon" href="#" onclick="event.preventDefault();">
+        <img src="img/Camera.ico" class="icon" alt="Câmera">
+        <span class="lang pt">Câmera e Scanner</span>
+        <span class="lang en hidden">Camera and Scanner</span>
+    </a>
+    
+    <!-- Linha 5 -->
+    <a class="desktop-icon" href="#" onclick="event.preventDefault();">
+        <img src="img/Game_Controller.ico" class="icon" alt="Controles de Jogo">
+        <span class="lang pt">Controles de Jogo</span>
+        <span class="lang en hidden">Game Controllers</span>
+    </a>
+    
+    <a class="desktop-icon" href="#" onclick="event.preventDefault();">
+        <img src="img/Phone.ico" class="icon" alt="Telefone">
+        <span class="lang pt">Telefone e Modem</span>
+        <span class="lang en hidden">Phone and Modem</span>
+    </a>
+    
+    <a class="desktop-icon" href="#" onclick="event.preventDefault();">
+        <img src="img/User_Support.ico" class="icon" alt="Suporte">
+        <span class="lang pt">Central de Ajuda</span>
+        <span class="lang en hidden">Help and Support</span>
     </a>
 </div>
 
-<!-- Start Menu -->
+<!-- ==================== START MENU ==================== -->
 <div id="start-menu" class="start-menu">
     <div class="start-menu-header">
         <div class="user-avatar"></div>
@@ -123,8 +216,9 @@
     </div>
 </div>
 
-<!-- Window -->
-<div class="window active">
+<!-- ==================== WINDOW ==================== -->
+<div class="window active" data-window-id="main">
+    <!-- Title Bar -->
     <div class="title-bar">
         <div class="title-bar-left">
             <img src="img/ie-icon.png" class="title-bar-icon" alt="IE">
@@ -138,6 +232,7 @@
         </div>
     </div>
 
+    <!-- Toolbar -->
     <div class="toolbar">
         <button class="toolbar-btn" disabled>&larr; <span class="lang pt">Voltar</span><span class="lang en hidden">Back</span></button>
         <button class="toolbar-btn" disabled>&rarr;</button>
@@ -152,6 +247,7 @@
         </div>
     </div>
 
+    <!-- Address Bar -->
     <div class="address-bar">
         <span class="lang pt">Endereço</span>
         <span class="lang en hidden">Address</span>
@@ -159,6 +255,7 @@
         <button class="go-btn">Ir</button>
     </div>
 
+    <!-- Navigation Tabs -->
     <div class="nav-bar">
         <button class="nav-tab active" onclick="showSection('about', event)">
             <span class="lang pt">Sobre</span>
@@ -174,106 +271,76 @@
         </button>
     </div>
 
+    <!-- Content Area -->
     <div class="content">
-        <!-- ABOUT SECTION -->
+        <!-- ==================== ABOUT SECTION ==================== -->
         <div id="about" class="section">
             <div class="lang pt">
                 <h2>Sobre Mim</h2>
-                <p>Desenvolvedor com experiência em criação de interfaces web e engenharia de prompts para modelos de linguagem (LLMs).</p>
-                <p><strong>Habilidades:</strong></p>
-                <ul>
-                    <li>Engenharia de Prompts para LLMs</li>
-                    <li>Desenvolvimento Web (HTML, CSS, JavaScript)</li>
-                    <li>C e WebAssembly (WASM)</li>
-                </ul>
+                <p>Desenvolvedor full-stack com experiência em desenvolvimento web, engenharia de sistemas e engenharia de prompts para modelos de linguagem (LLMs).</p>
+                
+                <div id="skills-container-pt"></div>
             </div>
             <div class="lang en hidden">
                 <h2>About Me</h2>
-                <p>Developer with experience in web interface creation and prompt engineering for large language models (LLMs).</p>
-                <p><strong>Skills:</strong></p>
-                <ul>
-                    <li>Prompt Engineering for LLMs</li>
-                    <li>Web Development (HTML, CSS, JavaScript)</li>
-                    <li>C and WebAssembly (WASM)</li>
-                </ul>
+                <p>Full-stack developer with experience in web development, systems engineering, and prompt engineering for large language models (LLMs).</p>
+                
+                <div id="skills-container-en"></div>
             </div>
         </div>
 
-        <!-- PROJECTS SECTION -->
+        <!-- ==================== PROJECTS SECTION ==================== -->
         <div id="projects" class="section hidden">
             <div class="lang pt">
                 <h2>Projetos</h2>
                 
-                <div class="project">
-                    <h3>Computabilis</h3>
-                    <p>Sistema de gestão financeira pessoal.</p>
-                    <a href="https://luddevergard3n.github.io/Computabilis/" class="project-link">Ver projeto &rarr;</a>
+                <!-- Project Tabs -->
+                <div class="project-tabs">
+                    <button class="project-tab-btn active" onclick="showProjectTab('sites', event)">Sites</button>
+                    <button class="project-tab-btn" onclick="showProjectTab('projects', event)">Projetos</button>
                 </div>
                 
-                <div class="project">
-                    <h3>Studium</h3>
-                    <p>Plataforma educacional para melhorar a concentração e gerenciar estudos.</p>
-                    <a href="https://luddevergard3n.github.io/Studium/" class="project-link">Ver projeto &rarr;</a>
+                <!-- Sites Tab -->
+                <div class="project-tab-content active" id="tab-sites-pt">
+                    <div id="sites-list-pt"></div>
                 </div>
                 
-                <div class="project">
-                    <h3>ATLAS</h3>
-                    <p>Sistema de gerenciamento, previsão e análise de dados finaceiros para investidores, empresas ou holdings.</p>
-                    <a href="https://luddevergard3n.github.io/atlas-lite/" class="project-link">Ver projeto &rarr;</a>
-                </div>
-                
-                <div class="project">
-                    <h3>Fastlog Analyzer</h3>
-                    <p>Ferramenta de análise de logs em tempo real.</p>
-                    <a href="https://github.com/LuddEvergard3n/fastlog-analyzer" class="project-link">Ver projeto &rarr;</a>
-                </div>
-                
-                <div class="project">
-                    <h3>ARES</h3>
-                    <p>Sistema básico de gestão de dados financeiros.</p>
-                    <a href="https://github.com/LuddEvergard3n/Ares" class="project-link">Ver projeto &rarr;</a>
+                <!-- Projects Tab -->
+                <div class="project-tab-content" id="tab-projects-pt">
+                    <div id="projects-list-pt"></div>
                 </div>
             </div>
             
             <div class="lang en hidden">
                 <h2>Projects</h2>
                 
-                <div class="project">
-                    <h3>Computabilis</h3>
-                    <p>Personal financial management system.</p>
-                    <a href="https://luddevergard3n.github.io/Computabilis/" class="project-link">View project &rarr;</a>
+                <!-- Project Tabs -->
+                <div class="project-tabs">
+                    <button class="project-tab-btn active" onclick="showProjectTab('sites', event)">Sites</button>
+                    <button class="project-tab-btn" onclick="showProjectTab('projects', event)">Projects</button>
                 </div>
                 
-                <div class="project">
-                    <h3>Studium</h3>
-                    <p>Educational platform to improve concentration and manage studies.</p>
-                    <a href="https://luddevergard3n.github.io/Studium/" class="project-link">View project &rarr;</a>
+                <!-- Sites Tab -->
+                <div class="project-tab-content active" id="tab-sites-en">
+                    <div id="sites-list-en"></div>
                 </div>
                 
-                <div class="project">
-                    <h3>ATLAS</h3>
-                    <p>Financial data management, forecasting, and analysis system for investors, companies, or holding companies.</p>
-                    <a href="https://luddevergard3n.github.io/atlas-lite/" class="project-link">View project &rarr;</a>
-                </div>
-                
-                <div class="project">
-                    <h3>Fastlog Analyzer</h3>
-                    <p>Real-time log analysis tool.</p>
-                    <a href="https://github.com/LuddEvergard3n/fastlog-analyzer" class="project-link">View project &rarr;</a>
-                </div>
-                
-                <div class="project">
-                    <h3>ARES</h3>
-                    <p>Basic financial data management system.</p>
-                    <a href="https://github.com/LuddEvergard3n/Ares" class="project-link">View project &rarr;</a>
+                <!-- Projects Tab -->
+                <div class="project-tab-content" id="tab-projects-en">
+                    <div id="projects-list-en"></div>
                 </div>
             </div>
         </div>
 
-        <!-- CONTACT SECTION -->
+        <!-- ==================== CONTACT SECTION ==================== -->
         <div id="contact" class="section hidden">
             <div class="lang pt">
                 <h2>Contato</h2>
+                
+                <div class="contact-item">
+                    <span>Telefone:</span>
+                    <a href="tel:+5547999633905">+55 (47) 9 9963-3905</a>
+                </div>
                 
                 <div class="contact-item">
                     <span>Email:</span>
@@ -282,12 +349,12 @@
                 
                 <div class="contact-item">
                     <span>GitHub:</span>
-                    <a href="https://github.com/LuddEvergard3n" target="_blank">github.com/LuddEvergard3n</a>
+                    <a href="https://github.com/LuddEvergard3n" target="_blank" rel="noopener noreferrer">github.com/LuddEvergard3n</a>
                 </div>
                 
                 <div class="contact-item">
                     <span>LinkedIn:</span>
-                    <a href="https://www.linkedin.com/in/herbertbr-sorg-ludka/" target="_blank">linkedin.com/in/herbertbr-sorg-ludka</a>
+                    <a href="https://www.linkedin.com/in/herbertbr-sorg-ludka/" target="_blank" rel="noopener noreferrer">linkedin.com/in/herbertbr-sorg-ludka</a>
                 </div>
             </div>
             
@@ -295,30 +362,36 @@
                 <h2>Contact</h2>
                 
                 <div class="contact-item">
+                    <span>Phone:</span>
+                    <a href="tel:+5547999633905">+55 (47) 9 9963-3905</a>
+                </div>
+                
+                <div class="contact-item">
                     <span>Email:</span>
                     <a href="mailto:hbrslud@gmail.com">hbrslud@gmail.com</a>
                 </div>
                 
                 <div class="contact-item">
                     <span>GitHub:</span>
-                    <a href="https://github.com/LuddEvergard3n" target="_blank">github.com/LuddEvergard3n</a>
+                    <a href="https://github.com/LuddEvergard3n" target="_blank" rel="noopener noreferrer">github.com/LuddEvergard3n</a>
                 </div>
                 
                 <div class="contact-item">
                     <span>LinkedIn:</span>
-                    <a href="https://www.linkedin.com/in/herbertbr-sorg-ludka/" target="_blank">linkedin.com/in/herbertbr-sorg-ludka</a>
+                    <a href="https://www.linkedin.com/in/herbertbr-sorg-ludka/" target="_blank" rel="noopener noreferrer">linkedin.com/in/herbertbr-sorg-ludka</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Status Bar -->
     <div class="status-bar">
         <span class="lang pt">Concluído</span>
         <span class="lang en hidden">Done</span>
     </div>
 </div>
 
-<!-- Taskbar -->
+<!-- ==================== TASKBAR ==================== -->
 <div class="taskbar">
     <button class="start-button" onclick="toggleStartMenu()">
         <img src="img/windows-logo.png" alt="Windows">
@@ -326,7 +399,7 @@
         <span class="lang en hidden">Start</span>
     </button>
     <div class="taskbar-programs">
-        <div class="taskbar-item active" onclick="toggleWindow()">
+        <div class="taskbar-item active" data-window-id="main" onclick="toggleWindow('main')">
             <img src="img/ie-icon.png" alt="IE">
             <span class="lang pt">Meu Portfólio</span>
             <span class="lang en hidden">My Portfolio</span>
@@ -337,6 +410,17 @@
     </div>
 </div>
 
-<script src="script.js"></script>
+<!-- ==================== SCRIPTS ==================== -->
+<script src="js/config.js"></script>
+<script src="js/modules/boot.js"></script>
+<script src="js/modules/clock.js"></script>
+<script src="js/modules/language.js"></script>
+<script src="js/modules/startMenu.js"></script>
+<script src="js/modules/navigation.js"></script>
+<script src="js/modules/window.js"></script>
+<script src="js/modules/clippy.js"></script>
+<script src="js/modules/minesweeper.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>

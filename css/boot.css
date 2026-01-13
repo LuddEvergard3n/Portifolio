@@ -1,0 +1,202 @@
+/**
+ * BOOT SCREEN - Windows XP
+ * 
+ * Animação de inicialização do sistema
+ */
+
+/* ==================== RESET & BASE ==================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  overflow: hidden;
+  height: 100vh;
+  background: url('../img/bliss.jpg') center center / cover no-repeat fixed;
+}
+
+/* ==================== BOOT SCREEN ==================== */
+
+.boot-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--xp-black);
+  z-index: var(--z-index-boot);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity var(--transition-slow);
+}
+
+.boot-screen.fade-out {
+  opacity: 0;
+}
+
+.boot-screen.hidden {
+  display: none !important;
+}
+
+/* ==================== LOGO ==================== */
+
+.boot-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.boot-windows-logo {
+  width: 90px;
+  height: auto;
+  margin-bottom: var(--spacing-lg);
+  filter: drop-shadow(0 0 20px rgba(58, 147, 255, 0.5));
+}
+
+/* ==================== TEXTO ==================== */
+
+.boot-text {
+  color: var(--xp-white);
+  font-family: var(--font-family-boot);
+  text-align: center;
+}
+
+.boot-text .microsoft {
+  font-size: var(--font-size-lg);
+  letter-spacing: 3px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.boot-text .windows {
+  font-size: var(--font-size-xxl);
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: -2px;
+}
+
+.boot-text .windows span {
+  font-size: 24px;
+  font-style: normal;
+  vertical-align: super;
+}
+
+.boot-text .edition {
+  font-size: var(--font-size-xl);
+  color: #ccc;
+  margin-top: var(--spacing-sm);
+}
+
+/* ==================== BARRA DE PROGRESSO ==================== */
+
+.boot-progress {
+  width: 200px;
+  height: 20px;
+  background: var(--xp-black);
+  border: 1px solid #333;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  position: relative;
+  animation: fadeIn 1s ease-out 0.5s backwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.boot-progress-inner {
+  position: absolute;
+  top: var(--spacing-xs);
+  left: var(--spacing-xs);
+  bottom: var(--spacing-xs);
+  display: flex;
+  gap: var(--spacing-xs);
+  animation: progressMove 1s linear infinite;
+}
+
+@keyframes progressMove {
+  0% { left: -60px; }
+  100% { left: 200px; }
+}
+
+.progress-block {
+  width: 12px;
+  height: 100%;
+  background: var(--gradient-progress);
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(80, 137, 216, 0.5);
+}
+
+/* ==================== RODAPÉ ==================== */
+
+.boot-copyright {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: #808080;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-primary);
+  animation: fadeIn 1.2s ease-out;
+}
+
+.boot-ms-logo {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  color: #808080;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-family-ms);
+  font-style: italic;
+  animation: fadeIn 1.2s ease-out;
+}
+
+/* ==================== RESPONSIVO ==================== */
+
+@media (max-width: 600px) {
+  .boot-windows-logo {
+    width: 70px;
+  }
+  
+  .boot-text .windows {
+    font-size: 36px;
+  }
+  
+  .boot-text .windows span {
+    font-size: 18px;
+  }
+  
+  .boot-copyright,
+  .boot-ms-logo {
+    font-size: var(--font-size-xs);
+    bottom: 15px;
+  }
+  
+  .boot-copyright {
+    left: 15px;
+  }
+  
+  .boot-ms-logo {
+    right: 15px;
+  }
+}

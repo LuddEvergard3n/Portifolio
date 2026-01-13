@@ -1,0 +1,211 @@
+/**
+ * VARIÁVEIS CSS - Windows XP Theme
+ * 
+ * Centraliza cores, tamanhos e valores reutilizáveis.
+ * Facilita manutenção e customização do tema.
+ */
+
+:root {
+  /* ==================== CORES DO WINDOWS XP ==================== */
+  
+  /* Azul Windows XP */
+  --xp-blue-primary: #0058ee;
+  --xp-blue-light: #3a93ff;
+  --xp-blue-dark: #003bcd;
+  --xp-blue-darker: #002c9b;
+  --xp-blue-taskbar: #1941a5;
+  
+  /* Verde do botão Iniciar */
+  --xp-green-primary: #3c9c3c;
+  --xp-green-mid: #2d8e2d;
+  --xp-green-dark: #1e7b1e;
+  --xp-green-darker: #156815;
+  
+  /* Cinza/Bege do sistema */
+  --xp-gray-desktop: #ece9d8;
+  --xp-gray-light: #f6f4ec;
+  --xp-gray-mid: #f1efe2;
+  --xp-gray-border: #aaa;
+  --xp-gray-dark: #999;
+  
+  /* Vermelho do botão fechar */
+  --xp-red-primary: #c75050;
+  --xp-red-dark: #b33;
+  --xp-red-darker: #8c1c1c;
+  
+  /* Outras cores */
+  --xp-white: #fff;
+  --xp-black: #000;
+  --xp-text-dark: #333;
+  --xp-text-gray: #666;
+  --xp-shadow: rgba(0, 0, 0, 0.4);
+  
+  /* ==================== GRADIENTES ==================== */
+  
+  /* Barra de título da janela */
+  --gradient-title-bar: linear-gradient(180deg, 
+    #0058ee 0%, 
+    #3a93ff 8%, 
+    #288eff 40%, 
+    #0058ee 88%, 
+    #002c9b 93%, 
+    #003bcd 95%, 
+    #1070ff 100%
+  );
+  
+  /* Taskbar */
+  --gradient-taskbar: linear-gradient(180deg,
+    #3168d5 0%,
+    #4993e6 3%,
+    #2157d7 6%,
+    #1941a5 90%,
+    #122c73 100%
+  );
+  
+  /* Botão Iniciar */
+  --gradient-start-btn: linear-gradient(180deg,
+    #3c9c3c 0%,
+    #2d8e2d 50%,
+    #1e7b1e 100%
+  );
+  
+  --gradient-start-btn-active: linear-gradient(180deg,
+    #2d8e2d 0%,
+    #1e7b1e 50%,
+    #156815 100%
+  );
+  
+  /* Menu Iniciar */
+  --gradient-start-header: linear-gradient(180deg,
+    #1f5fc9 0%,
+    #3a8cf8 100%
+  );
+  
+  --gradient-start-right: linear-gradient(180deg,
+    #6b9dea 0%,
+    #4177d1 100%
+  );
+  
+  --gradient-start-footer: linear-gradient(180deg,
+    #3168d5 0%,
+    #4993e6 3%,
+    #2157d7 6%,
+    #1941a5 100%
+  );
+  
+  /* Botões */
+  --gradient-btn-blue: linear-gradient(180deg,
+    #3c81f3 0%,
+    #2d6cd9 100%
+  );
+  
+  --gradient-btn-blue-hover: linear-gradient(180deg,
+    #5aa0e9 0%,
+    #3d7ce9 100%
+  );
+  
+  --gradient-btn-toolbar: linear-gradient(180deg,
+    #fff 0%,
+    #ddd 100%
+  );
+  
+  --gradient-btn-toolbar-hover: linear-gradient(180deg,
+    #e8f4fc 0%,
+    #c4e0f9 100%
+  );
+  
+  --gradient-toolbar-bg: linear-gradient(180deg,
+    #f6f8fb 0%,
+    #e3e8f0 100%
+  );
+  
+  /* Desligamento */
+  --gradient-shutdown: linear-gradient(180deg,
+    #d94a4a 0%,
+    #c93333 100%
+  );
+  
+  --gradient-shutdown-hover: linear-gradient(180deg,
+    #e95a5a 0%,
+    #d94343 100%
+  );
+  
+  /* Barra de progresso do boot */
+  --gradient-progress: linear-gradient(180deg,
+    #5089d8 0%,
+    #2a5caa 50%,
+    #1e4a8c 100%
+  );
+  
+  /* ==================== TAMANHOS ==================== */
+  
+  --taskbar-height: 30px;
+  --title-bar-height: 26px;
+  --toolbar-height: 32px;
+  --address-bar-height: 28px;
+  --status-bar-height: 22px;
+  
+  --desktop-icon-size: 48px;
+  --taskbar-icon-size: 16px;
+  --title-bar-icon-size: 16px;
+  
+  --window-min-width: 600px;
+  --window-min-height: 400px;
+  --window-max-width: calc(100vw - 40px);
+  --window-max-height: calc(100vh - 70px);
+  
+  --start-menu-width: 380px;
+  
+  /* ==================== ESPAÇAMENTOS ==================== */
+  
+  --spacing-xs: 3px;
+  --spacing-sm: 5px;
+  --spacing-md: 10px;
+  --spacing-lg: 15px;
+  --spacing-xl: 20px;
+  
+  /* ==================== BORDAS ==================== */
+  
+  --border-radius-sm: 3px;
+  --border-radius-md: 5px;
+  --border-radius-lg: 8px;
+  
+  --border-width: 1px;
+  --border-width-thick: 2px;
+  --border-width-window: 3px;
+  
+  /* ==================== SOMBRAS ==================== */
+  
+  --shadow-sm: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  --shadow-md: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 3px 3px 10px rgba(0, 0, 0, 0.4);
+  
+  /* ==================== TRANSIÇÕES ==================== */
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* ==================== FONTES ==================== */
+  
+  --font-family-primary: Tahoma, Verdana, Arial, sans-serif;
+  --font-family-boot: 'Franklin Gothic Medium', 'Trebuchet MS', sans-serif;
+  --font-family-ms: 'Segoe UI', Tahoma, sans-serif;
+  
+  --font-size-xs: 10px;
+  --font-size-sm: 11px;
+  --font-size-md: 13px;
+  --font-size-lg: 14px;
+  --font-size-xl: 16px;
+  --font-size-xxl: 48px;
+  
+  /* ==================== Z-INDEX ==================== */
+  
+  --z-index-desktop: 1;
+  --z-index-window: 100;
+  --z-index-taskbar: 1000;
+  --z-index-start-menu: 2000;
+  --z-index-boot: 9999;
+  --z-index-clippy: 10000;
+  --z-index-minesweeper: 10001;
+}
