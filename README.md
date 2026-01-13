@@ -147,6 +147,8 @@ Acesse: `http://localhost:8000`
 - **Enter**: Ativa o elemento focado
 - **ESC**: Fecha a janela ativa
 - **Alt + F4**: Fecha a janela ativa
+- **Ctrl + Shift + C (3x)**: Ativa o Clippy
+- **Ctrl + Shift + M (3x)**: Ativa o Campo Minado
 
 ### Adicionar Novos Projetos
 
@@ -354,6 +356,18 @@ Todas as cores e tamanhos estão centralizados em `css/variables.css`:
 - Menu Iniciar em largura total
 - Touch events para drag/resize
 - Grid de projetos adaptativo
+
+## SEO
+
+### Otimizações Implementadas
+
+- **Meta Tags Completas**: Description, keywords, Open Graph, Twitter Card
+- **Structured Data**: Schema.org Person markup para rich snippets
+- **Sitemap.xml**: Mapa do site para crawlers
+- **Robots.txt**: Configuração para indexação
+- **URLs Canônicas**: Previne conteúdo duplicado
+- **Alt Tags**: Todas as imagens com textos alternativos
+- **Semantic HTML**: Tags semânticas (nav, header, main, article)
 
 ## Acessibilidade
 

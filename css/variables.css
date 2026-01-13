@@ -145,9 +145,9 @@
   --address-bar-height: 32px;
   --status-bar-height: 24px;
   
-  --desktop-icon-size: 64px;
-  --taskbar-icon-size: 24px;
-  --title-bar-icon-size: 20px;
+  --desktop-icon-size: 52px;
+  --taskbar-icon-size: 20px;
+  --title-bar-icon-size: 18px;
   
   --window-min-width: 600px;
   --window-min-height: 400px;
