@@ -44,10 +44,26 @@ const i18n = {
       'project.fastlog.desc': 'Ferramenta de análise de logs em tempo real com processamento eficiente.',
       'project.ares': 'ARES',
       'project.ares.desc': 'Sistema básico de gestão de dados financeiros.',
+      'project.cassandra': 'Cassandra',
+      'project.cassandra.desc': 'Sistema de análise de cenários com GUI, cache e comparação.',
+      'project.deterministic': 'Mini Deterministic Engine',
+      'project.deterministic.desc': 'Engine de simulação determinística com fixed-timestep e replay bit-exact.',
+      'project.banking': 'Mini Core Banking',
+      'project.banking.desc': 'Sistema bancário core em COBOL com ledger imutável e gestão de transações.',
+      'project.dashboard': 'Real-Time Monitoring Dashboard',
+      'project.dashboard.desc': 'Dashboard Angular para monitoramento real-time via WebSocket com Signals.',
       
       // Sites
       'site.law': 'Landing Advocacia Exemplo',
       'site.law.desc': 'Landing page para escritório de advocacia.',
+      'site.primecoast': 'Prime Coast',
+      'site.primecoast.desc': 'Landing page moderna para imobiliária (demonstração).',
+      
+      // Paginação
+      'pagination.previous': 'Anterior',
+      'pagination.next': 'Próxima',
+      'pagination.page': 'Página',
+      'pagination.of': 'de',
       
       // UI Elements
       'desktop.myComputer': 'Meu Computador',
@@ -93,10 +109,26 @@ const i18n = {
       'project.fastlog.desc': 'Real-time log analysis tool with efficient processing.',
       'project.ares': 'ARES',
       'project.ares.desc': 'Basic financial data management system.',
+      'project.cassandra': 'Cassandra',
+      'project.cassandra.desc': 'Scenario analysis system with GUI, cache and comparison.',
+      'project.deterministic': 'Mini Deterministic Engine',
+      'project.deterministic.desc': 'Deterministic simulation engine with fixed-timestep and bit-exact replay.',
+      'project.banking': 'Mini Core Banking',
+      'project.banking.desc': 'Core banking system in COBOL with immutable ledger and transaction management.',
+      'project.dashboard': 'Real-Time Monitoring Dashboard',
+      'project.dashboard.desc': 'Angular dashboard for real-time monitoring via WebSocket with Signals.',
       
       // Sites
       'site.law': 'Law Firm Landing Example',
       'site.law.desc': 'Landing page for law firm.',
+      'site.primecoast': 'Prime Coast',
+      'site.primecoast.desc': 'Modern landing page for real estate agency (demo).',
+      
+      // Pagination
+      'pagination.previous': 'Previous',
+      'pagination.next': 'Next',
+      'pagination.page': 'Page',
+      'pagination.of': 'of',
       
       // UI Elements
       'desktop.myComputer': 'My Computer',
@@ -226,6 +258,30 @@ const i18n = {
         description: this.t('project.ares.desc', language),
         url: 'https://github.com/LuddEvergard3n/Ares',
         tags: ['Java', 'C', 'COBOL']
+      },
+      {
+        name: this.t('project.cassandra', language),
+        description: this.t('project.cassandra.desc', language),
+        url: 'https://github.com/LuddEvergard3n/Cassandra',
+        tags: ['Python', 'Tkinter', 'Analysis']
+      },
+      {
+        name: this.t('project.deterministic', language),
+        description: this.t('project.deterministic.desc', language),
+        url: 'https://github.com/LuddEvergard3n/mini-deterministic-engine',
+        tags: ['C++', 'SDL2', 'Game Engine']
+      },
+      {
+        name: this.t('project.banking', language),
+        description: this.t('project.banking.desc', language),
+        url: 'https://github.com/LuddEvergard3n/mini-core-banking',
+        tags: ['COBOL', 'Banking', 'Terminal']
+      },
+      {
+        name: this.t('project.dashboard', language),
+        description: this.t('project.dashboard.desc', language),
+        url: 'https://github.com/LuddEvergard3n/realtime-monitoring-dashboard',
+        tags: ['Angular', 'TypeScript', 'WebSocket']
       }
     ];
   },
@@ -243,6 +299,12 @@ const i18n = {
         description: this.t('site.law.desc', language),
         url: 'https://luddevergard3n.github.io/Landing-Advocacia/',
         tags: ['HTML', 'CSS', 'JavaScript']
+      },
+      {
+        name: this.t('site.primecoast', language),
+        description: this.t('site.primecoast.desc', language),
+        url: 'https://luddevergard3n.github.io/Prime-Coast/',
+        tags: ['HTML5', 'Tailwind', 'JavaScript']
       }
     ];
   }

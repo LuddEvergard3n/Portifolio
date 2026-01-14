@@ -27,6 +27,11 @@ const Language = {
     
     this.currentLang = lang;
     
+    // Atualizar i18n
+    if (window.i18n) {
+      window.i18n.setLanguage(lang);
+    }
+    
     // Ocultar todos os elementos de idioma
     document.querySelectorAll('.lang').forEach(el => {
       el.classList.add('hidden');
@@ -48,6 +53,21 @@ const Language = {
       // Se não houver evento, atualizar manualmente
       const btn = document.querySelector(`.lang-switch button[onclick*="${lang}"]`);
       if (btn) btn.classList.add('active');
+    }
+    
+    // Resetar paginação e re-renderizar
+    if (window.Pagination) {
+      Pagination.reset();
+      
+      // Re-renderizar a aba ativa
+      const activeTab = document.querySelector('.project-tab-content.active');
+      if (activeTab) {
+        if (activeTab.id.includes('sites')) {
+          Pagination.renderSites('sites-list-' + lang);
+        } else if (activeTab.id.includes('projects')) {
+          Pagination.renderProjects('projects-list-' + lang);
+        }
+      }
     }
     
     // Atualizar barra de endereço

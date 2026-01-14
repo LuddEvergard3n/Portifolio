@@ -362,9 +362,6 @@ Todas as cores e tamanhos estão centralizados em `css/variables.css`:
 ### Otimizações Implementadas
 
 - **Meta Tags Completas**: Description, keywords, Open Graph, Twitter Card
-- **Structured Data**: Schema.org Person markup para rich snippets
-- **Sitemap.xml**: Mapa do site para crawlers
-- **Robots.txt**: Configuração para indexação
 - **URLs Canônicas**: Previne conteúdo duplicado
 - **Alt Tags**: Todas as imagens com textos alternativos
 - **Semantic HTML**: Tags semânticas (nav, header, main, article)
@@ -386,16 +383,6 @@ Todas as cores e tamanhos estão centralizados em `css/variables.css`:
   - Anúncios de mudanças de estado
 - **Contraste**: Cores atendem WCAG 2.1 AA
 - **Focus Management**: Foco gerenciado em janelas modais
-
-##  Contribuindo
-
-Contribuições são bem-vindas! Por favor:
-
-1. Fork o projeto
-2. Crie uma branch (`git checkout -b feature/NovaFeature`)
-3. Commit suas mudanças (`git commit -m 'Add: Nova feature'`)
-4. Push para a branch (`git push origin feature/NovaFeature`)
-5. Abra um Pull Request
 
 ### Convenções de Código
 

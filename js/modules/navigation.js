@@ -67,6 +67,15 @@ const Navigation = {
       if (event && event.target) {
         event.target.classList.add('active');
       }
+      
+      // Renderizar com paginação
+      if (window.Pagination) {
+        if (tabId === 'projects') {
+          Pagination.renderProjects('projects-list-' + lang);
+        } else if (tabId === 'sites') {
+          Pagination.renderSites('sites-list-' + lang);
+        }
+      }
     }
   },
   
@@ -209,9 +218,17 @@ const Navigation = {
    * Inicializa o módulo de navegação
    */
   init() {
-    // Renderizar conteúdo dinâmico
+    // Renderizar conteúdo dinâmico (mantido para compatibilidade)
     this.renderProjects();
     this.renderSkills();
+    
+    // Inicializar paginação se disponível
+    if (window.Pagination) {
+      Pagination.init();
+      // Renderizar primeira página de sites (aba padrão)
+      Pagination.renderSites('sites-list-pt');
+      Pagination.renderSites('sites-list-en');
+    }
     
     // Mostrar primeira aba de projetos
     this.showProjectTab('sites');
