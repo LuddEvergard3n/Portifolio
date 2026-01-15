@@ -218,16 +218,17 @@ const Navigation = {
    * Inicializa o módulo de navegação
    */
   init() {
-    // Renderizar conteúdo dinâmico (mantido para compatibilidade)
-    this.renderProjects();
+    // Renderizar skills (mantido)
     this.renderSkills();
     
-    // Inicializar paginação se disponível
+    // Inicializar paginação
     if (window.Pagination) {
       Pagination.init();
-      // Renderizar primeira página de sites (aba padrão)
+      // Renderizar primeira página de sites e projetos em ambos idiomas
       Pagination.renderSites('sites-list-pt');
       Pagination.renderSites('sites-list-en');
+      Pagination.renderProjects('projects-list-pt');
+      Pagination.renderProjects('projects-list-en');
     }
     
     // Mostrar primeira aba de projetos

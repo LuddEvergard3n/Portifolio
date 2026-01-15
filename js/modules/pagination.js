@@ -235,8 +235,7 @@ const Pagination = {
       return;
     }
     
-    // Obter traduções
-    const lang = window.Language ? window.Language.getCurrent() : 'pt';
+    // Obter traduções (lang já foi declarado na linha 213)
     const prevText = window.i18n ? window.i18n.t('pagination.previous', lang) : 'Anterior';
     const nextText = window.i18n ? window.i18n.t('pagination.next', lang) : 'Próxima';
     const pageText = window.i18n ? window.i18n.t('pagination.page', lang) : 'Página';
